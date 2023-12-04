@@ -9,5 +9,6 @@ edition = "2021"
 day_1 = { path = "./calendar/day_1"}
 day_2 = { path = "./calendar/day_2"}
 day_3 = { path = "./calendar/day_3"}
+day_4 = { path = "./calendar/day_4"}
 file_parser = { path = "../file_parser/"}
 

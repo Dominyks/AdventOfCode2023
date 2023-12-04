@@ -9,6 +9,7 @@ dependencies = [
  "day_1",
  "day_2",
  "day_3",
+ "day_4",
  "file_parser",
 ]
 
@@ -22,6 +23,10 @@ version = "0.1.0"
 
 [[package]]
 name = "day_3"
+version = "0.1.0"
+
+[[package]]
+name = "day_4"
 version = "0.1.0"
 
 [[package]]
