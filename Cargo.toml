@@ -8,5 +8,6 @@ edition = "2021"
 [dependencies]
 day_1 = { path = "./calendar/day_1"}
 day_2 = { path = "./calendar/day_2"}
+day_3 = { path = "./calendar/day_3"}
 file_parser = { path = "../file_parser/"}
 
