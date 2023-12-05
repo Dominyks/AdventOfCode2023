@@ -1,8 +1,8 @@
 use std::str::Lines;
 
-static reds : u32 = 12;
-static greens : u32 = 13;
-static blues : u32 = 14;
+static REDS: u32 = 12;
+static GREENS: u32 = 13;
+static BLUES: u32 = 14;
 
 pub fn part_1(lines : &mut Lines) -> u32 {
 
@@ -11,7 +11,6 @@ pub fn part_1(lines : &mut Lines) -> u32 {
     for line in lines {
         let game_line = line.split(":").collect::<Vec<&str>>();
 
-        let mut id = 0;
         if game_line.len() == 2 {
             let id = get_line_id(&game_line[0]);
             // dbg!(id);
@@ -50,9 +49,9 @@ pub fn part_1(lines : &mut Lines) -> u32 {
         for game_hands in game_line.1 {
             for game_set in game_hands {
                 let more_than = match game_set.color.as_str() {
-                    "red" => game_set.number > reds,
-                    "green" => game_set.number > greens,
-                    "blue" => game_set.number > blues,
+                    "red" => game_set.number > REDS,
+                    "green" => game_set.number > GREENS,
+                    "blue" => game_set.number > BLUES,
                     _ => false
                 };
 
@@ -79,7 +78,6 @@ pub fn part_2(lines : &mut Lines) -> u32 {
     for line in lines {
         let game_line = line.split(":").collect::<Vec<&str>>();
 
-        let mut id = 0;
         if game_line.len() == 2 {
             let id = get_line_id(&game_line[0]);
             // dbg!(id);
