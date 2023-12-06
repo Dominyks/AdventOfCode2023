@@ -1,8 +1,6 @@
-use std::collections::HashMap;
-
 pub fn get_answers() -> (u64, u64){
-    let input = file_parser::parse_file(".//input_data//day5//input_sample.txt");
-    // let input = file_parser::parse_file(".//input_data//day5//input.txt");
+    // let input = file_parser::parse_file(".//input_data//day5//input_sample.txt");
+    let input = file_parser::parse_file(".//input_data//day5//input.txt");
 
     let lines = group_data_by_new_line(&input);
 
