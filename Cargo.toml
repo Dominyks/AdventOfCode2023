@@ -12,5 +12,6 @@ day_3 = { path = "./calendar/day_3"}
 day_4 = { path = "./calendar/day_4"}
 day_5 = { path = "./calendar/day_5"}
 day_6 = { path = "./calendar/day_6"}
+day_7 = { path = "./calendar/day_7"}
 file_parser = { path = "../file_parser/"}
 
