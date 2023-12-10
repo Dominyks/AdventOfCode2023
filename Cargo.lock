@@ -7,6 +7,7 @@ name = "advent_of_code_2023"
 version = "0.1.0"
 dependencies = [
  "day_1",
+ "day_10",
  "day_2",
  "day_3",
  "day_4",
@@ -21,6 +22,13 @@ dependencies = [
 [[package]]
 name = "day_1"
 version = "0.1.0"
+
+[[package]]
+name = "day_10"
+version = "0.1.0"
+dependencies = [
+ "file_parser",
+]
 
 [[package]]
 name = "day_2"
