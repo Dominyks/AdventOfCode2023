@@ -2,17 +2,61 @@ pub fn get_answers() -> (i32, i32){
     // let input = file_parser::parse_file(".//input_data//day10//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day10//input.txt");
 
-    let maze = parse_data(&input);
+    let mut maze = parse_data(&input);
 
-    let part_1 = part_1_ans(&maze);
-    let part_2 = 0;
+    let (part_1, closed_loop) = part_1_ans(&maze);
+    let part_2 = part_2_ans(closed_loop, &mut maze);
 
     (part_1, part_2)
 }
 
-fn part_1_ans(maze: &Vec<Vec<char>>) -> i32{
+fn part_2_ans(closed_loop: Vec<(usize, usize)>, maze: &mut Vec<Vec<char>>) -> i32 {
+    for x in 0..maze.len() {
+        for y in 0..maze[x].len() {
+            if !closed_loop.contains(&(x,y)) {
+                maze[x][y] = '.';
+            }
+        }
+    }
+
+    let mut in_loop = 0;
+
+    for x in 1..maze.len() - 1 {
+        let mut is_inside = false;
+        let mut crossings = 0;
+
+        for y in 0..maze[x].len() {
+            match maze[x][y] {
+                '.' => {
+                    if crossings % 2 == 0 {
+                        is_inside = false;
+                    } else {
+                        is_inside = true;
+                        in_loop += 1;
+                    }
+                },
+                'J' => crossings += 1,
+                'F' => {  },
+                'L' => crossings += 1,
+                'S' => crossings += 1,
+                '7' => {  },
+                '|' => crossings += 1,
+                '-' => {},
+                _ => unreachable!("{}", maze[x][y])
+            }
+        }
+    }
+
+    in_loop
+}
+
+fn part_1_ans(maze: &Vec<Vec<char>>) -> (i32, Vec<(usize, usize)>) {
+    let mut closed_loop:Vec<(usize, usize)> = Vec::new();
+
     let (starting_row, starting_column) = find_starting_point(&maze);
     let adjanced_tiles = get_adjanced_tiles(starting_row, starting_column, &maze);
+
+    closed_loop.push((starting_row, starting_column));
 
     if adjanced_tiles.len() <= 0 {
         panic!("bad maze");
@@ -34,6 +78,8 @@ fn part_1_ans(maze: &Vec<Vec<char>>) -> i32{
             x
         } else { continue; };
 
+        closed_loop.push((x, y));
+
         // println!("tile: {}, x{} y{}", &tile, x, y);
         break;
     }
@@ -45,12 +91,15 @@ fn part_1_ans(maze: &Vec<Vec<char>>) -> i32{
         } else { panic!()};
         (x,y) = Maze::try_walk(&next_direction, x, y, &maze).unwrap();
         tile = maze[x][y];
+
+        closed_loop.push((x, y));
+
         // println!("tile: {}, x{} y{}", &tile, x, y);
         steps += 1;
     }
 
 
-    steps / 2
+    (steps / 2, closed_loop)
 }
 
 fn get_adjanced_tiles(row: usize, column: usize, maze: &Vec<Vec<char>>) -> Vec<(usize, usize, Direction)> {
