@@ -1,4 +1,4 @@
-pub fn get_answers() -> (u64, u64){
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day5//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day5//input.txt");
 
@@ -10,7 +10,7 @@ pub fn get_answers() -> (u64, u64){
     let smallest_location_for_seeds = smallest_location_for_seeds(&seeds, &from_to_maps);
     let smallest_location_for_ranges_of_seeds = smallest_location_for_ranges_of_seeds(&seeds, &from_to_maps);
 
-    (smallest_location_for_seeds, smallest_location_for_ranges_of_seeds)
+    println!("part 1 = {}\npart 2 = {}", smallest_location_for_seeds, smallest_location_for_ranges_of_seeds);
 }
 
 fn smallest_location_for_seeds(seeds: &Vec<u32>, from_to_maps: &Vec<FromToMap>) -> u64 {

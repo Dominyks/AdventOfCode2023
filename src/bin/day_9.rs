@@ -1,7 +1,7 @@
 use std::ops::Neg;
 use file_parser;
 
-pub fn get_answers() -> (i32, i32) {
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day9//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day9//input.txt");
 
@@ -10,7 +10,7 @@ pub fn get_answers() -> (i32, i32) {
     let part_1 = get_part_1_ans(&parsed_data);
     let part_2 = get_part_2_ans(&parsed_data);
 
-    (part_1, part_2)
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
 }
 
 fn get_part_1_ans(vecs: &Vec<Vec<i32>>) -> i32 {

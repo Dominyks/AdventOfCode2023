@@ -1,4 +1,4 @@
-pub fn get_answers() -> (i32, i32){
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day10//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day10//input.txt");
 
@@ -7,7 +7,7 @@ pub fn get_answers() -> (i32, i32){
     let (part_1, closed_loop) = part_1_ans(&maze);
     let part_2 = part_2_ans(closed_loop, &mut maze);
 
-    (part_1, part_2)
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
 }
 
 fn part_2_ans(closed_loop: Vec<(usize, usize)>, maze: &mut Vec<Vec<char>>) -> i32 {

@@ -1,5 +1,5 @@
 [package]
-name = "day_1"
+name = "file_parser"
 version = "0.1.0"
 edition = "2021"
 

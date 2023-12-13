@@ -1,8 +1,17 @@
 use std::str::Lines;
-
 static REDS: u32 = 12;
 static GREENS: u32 = 13;
 static BLUES: u32 = 14;
+
+fn main() {
+    let input = file_parser::parse_file(".//input_data//day2//input.txt");
+    let lines = input.lines();
+
+    let part_1 = part_1(&mut lines.clone());
+    let part_2 = part_2(&mut lines.clone());
+
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
+}
 
 pub fn part_1(lines : &mut Lines) -> u32 {
 

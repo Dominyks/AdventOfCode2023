@@ -1,8 +1,19 @@
 use std::str::Lines;
+use file_parser;
 
 static RADIX: u32 = 10;
 
-pub fn part_1(input : &mut Lines) -> u32 {
+fn main() {
+    let input = file_parser::parse_file(".//input_data//day1//input.txt");
+    let lines = input.lines();
+
+    let part_1 = part_1(&mut lines.clone());
+    let part_2 = part_2(&mut lines.clone());
+
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
+}
+
+fn part_1(input : &mut Lines) -> u32 {
     let mut sum = 0;
 
     for line in input {

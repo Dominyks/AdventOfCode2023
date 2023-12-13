@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::hash::Hash;
 
-pub fn get_answers() -> (i32, i64) {
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day8//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day8//input.txt");
 
@@ -10,7 +10,7 @@ pub fn get_answers() -> (i32, i64) {
     let part_1 = get_how_many_steps_to_reach_end(&directions, &maps);
     let part_2 = get_how_many_steps_to_reach_end_multiple_paths(&directions, &maps);
 
-    (part_1, part_2)
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
 }
 
 fn get_how_many_steps_to_reach_end_multiple_paths(directions: &Vec<char>, maps: &HashMap<&str, Map>) -> i64 {

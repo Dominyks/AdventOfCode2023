@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "day_1"
+name = "file_parser"
 version = "0.1.0"

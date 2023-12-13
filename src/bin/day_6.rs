@@ -1,7 +1,7 @@
 use std::ops::Add;
 use file_parser;
 
-pub fn get_answers() -> (i64, i64) {
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day6//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day6//input.txt");
 
@@ -10,7 +10,7 @@ pub fn get_answers() -> (i64, i64) {
     let way_to_win_all_races = get_num_of_ways_to_win_all_races(&times, &distances);
     let way_to_win_single_total_race = get_num_of_ways_to_win_single_race(&times, &distances);
 
-    (way_to_win_all_races, way_to_win_single_total_race)
+    println!("part 1 = {}\npart 2 = {}", way_to_win_all_races, way_to_win_single_total_race);
 }
 
 fn get_num_of_ways_to_win_all_races(times: &Vec<i64>, distances: &Vec<i64>) -> i64 {

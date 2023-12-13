@@ -1,5 +1,5 @@
 
-pub fn get_answers() -> (usize, usize) {
+fn main() {
     // let input = file_parser::parse_file(".//input_data//day7//input_sample.txt");
     let input = file_parser::parse_file(".//input_data//day7//input.txt");
 
@@ -8,7 +8,7 @@ pub fn get_answers() -> (usize, usize) {
     let part_1 = get_value_part_1(hands.clone());
     let part_2 = get_value_part_2(hands.clone());
 
-    (part_1, part_2)
+    println!("part 1 = {}\npart 2 = {}", part_1, part_2);
 }
 
 fn get_value_part_1(mut hands: Vec<Hand>) -> usize {

@@ -6,15 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-day_1 = { path = "./calendar/day_1"}
-day_2 = { path = "./calendar/day_2"}
-day_3 = { path = "./calendar/day_3"}
-day_4 = { path = "./calendar/day_4"}
-day_5 = { path = "./calendar/day_5"}
-day_6 = { path = "./calendar/day_6"}
-day_7 = { path = "./calendar/day_7"}
-day_8 = { path = "./calendar/day_8"}
-day_9 = { path = "./calendar/day_9"}
-day_10 = { path = "./calendar/day_10"}
-file_parser = { path = "../file_parser/"}
+file_parser = { path = "file_parser/" }
 
